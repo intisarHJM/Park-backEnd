@@ -15,7 +15,15 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch server.js"
   },
-  "keywords": []
+  "keywords": [],
+  "dependencies": {
+    "connect-mongo": "^6.0.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongoose": "^9.4.1",
+    "morgan": "^1.10.1"
+  }
 }
