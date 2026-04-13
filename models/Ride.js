@@ -6,7 +6,7 @@ const rideSchema = new mongoose.Schema(
     imageURL: { type: String, required: true },
     type: { type: String, required: true },
     tickets: [
-      { type: mongoose.Schema.Types.ObjectId, ref: "Ticket", required: true },
+      { type: mongoose.Schema.Types.ObjectId, ref: "Ticket", required: false },
     ],
   },
   { timestamps: true }
