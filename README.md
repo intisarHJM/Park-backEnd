@@ -13,7 +13,7 @@ The client-side application for this project can be found here:
 * **Framework:** Express.js
 * **Package Manager:** npm
 * **Database:** MongoDB with Mongoose ODM
-* **Security:** Helmet & CORS middleware
+* **Security:** CORS middleware
 
 ---
 
@@ -22,6 +22,19 @@ The client-side application for this project can be found here:
 * `mongoose` - Elegant MongoDB object modeling.
 * `dotenv` - Environment variable management.
 * `cors` - Enabling Cross-Origin Resource Sharing for the frontend.
-* `jsonwebtoken` - Secure industry-standard authentication tokens.
-* `bcryptjs` - Password hashing for secure user storage.
 * `morgan` - HTTP request logger for development debugging.
+
+---
+
+## 📂 Project Structure
+The backend is organized using a modular architecture to separate concerns:
+
+```text
+├── controllers/    # Logical handling for each route
+├── db/             # Database connection and configuration
+├── middleware/     # Custom functions for request processing
+├── models/         # Mongoose schemas for park data
+├── routes/         # API endpoint definitions
+├── server.js       # Main entry point and server setup
+├── package.json    # Project metadata and dependencies
+└── .gitignore      # Files excluded from version control
