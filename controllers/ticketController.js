@@ -48,8 +48,21 @@ const getTicketById = async (req, res) => {
   }
 }
 
+const deleteTicket = async (req, res) => {
+  try {
+    const ticket = await Ticket.findByIdAndDelete(req.params.id)
+    res.json(ticket)
+  } catch (error) {
+    res.status(500).json({
+      success: "An error occurred deleting a ticket.",
+      error: error.message,
+    })
+  }
+}
+
 module.exports = {
   createTicket,
   getAllTickets,
   getTicketById,
+  deleteTicket,
 }
