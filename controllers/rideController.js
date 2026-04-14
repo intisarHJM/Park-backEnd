@@ -29,11 +29,6 @@ const getAllRides = async (req, res) => {
   }
 }
 
-
-
-//get single ride by id(Rehab)
-
-
 const getRideById = async (req, res) => {
   try {
     const ride = await Ride.findById(req.params.id).populate("tickets")
@@ -50,12 +45,6 @@ const getRideById = async (req, res) => {
   }
 }
 
-
-//delete single ride by id(Rehab)
-
-
-
-
 const deleteRideById = async (req, res) => {
   try {
     const ride = await Ride.findByIdAndDelete(req.params.id)
@@ -64,7 +53,9 @@ const deleteRideById = async (req, res) => {
       return res.status(404).json({ success: false, message: "Ride not found" })
     }
 
-    res.status(200).json({ success: true, message: `${ride.name} deleted successfully` })
+    res
+      .status(200)
+      .json({ success: true, message: `${ride.name} deleted successfully` })
   } catch (error) {
     res.status(500).json({
       success: false,
@@ -78,5 +69,5 @@ module.exports = {
   getAllRides,
   createRide,
   getRideById,
-  deleteRideById
+  deleteRideById,
 }
