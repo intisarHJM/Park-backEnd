@@ -23,6 +23,7 @@
   "dependencies": {
     "bcrypt": "^6.0.0",
     "connect-mongo": "^6.0.0",
+    "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "ejs": "^5.0.2",
     "express": "^5.2.1",
@@ -30,6 +31,5 @@
     "method-override": "^3.0.0",
     "mongoose": "^9.4.1",
     "morgan": "^1.10.1"
-  },
-  "devDependencies": {}
+  }
 }

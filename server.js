@@ -2,6 +2,7 @@ require("dotenv").config({ quiet: true })
 
 const express = require("express")
 const morgan = require("morgan")
+const cors = require("cors")
 
 const PORT = process.env.PORT || 3001
 
@@ -12,6 +13,7 @@ const rideRouter = require("./routes/rideRouter")
 const ticketRouter = require("./routes/ticketRouter")
 
 const app = express()
+app.use(cors())
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
