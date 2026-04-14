@@ -17,7 +17,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 app.use("/", rideRouter)
-app.use("/tickets", ticketRouter)
+app.use("/", ticketRouter)
 
 app.get("/", (req, res) => {
   res.send("welcome to our park !")

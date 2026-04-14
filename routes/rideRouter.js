@@ -4,11 +4,8 @@ const rideController = require("../controllers/rideController")
 const { validateRide } = require("../middleware")
 
 router.get("/rides", rideController.getAllRides) //show all rides
-router.post("/newRide", rideController.createRide) // create/add new ride
 router.get("/rides/:id", rideController.getRideById) // get Single Ride By ID
+router.post("/newRide", validateRide, rideController.createRide) // create/add new ride & validate the field by middleware
 router.delete("/rides/:id", rideController.deleteRideById) // delete Single Ride By Id
-
-//middleware route
-router.post("/", validateRide, rideController.createRide)
 
 module.exports = router

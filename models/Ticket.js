@@ -12,9 +12,9 @@ const ticketSchema = new mongoose.Schema(
     },
     date: {
       type: Date,
-      required: true,
+      required: false,
     },
-    rideName: {
+    rideId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Ride",
       required: true,
