@@ -65,9 +65,11 @@ const deleteRideById = async (req, res) => {
   }
 }
 
+
 module.exports = {
   getAllRides,
   createRide,
   getRideById,
   deleteRideById,
+
 }

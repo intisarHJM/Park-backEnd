@@ -14,13 +14,11 @@ const ticketSchema = new mongoose.Schema(
       type: Date,
       required: false,
     },
-    // rideName: [
-    //   {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: "Ride",
-    //     required: false,
-    //   },
-    // ],
+    rideId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Ride",
+      required: true,
+    },
   },
   { timestamps: true }
 )
