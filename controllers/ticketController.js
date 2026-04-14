@@ -86,5 +86,5 @@ module.exports = {
   getAllTickets,
   getTicketsByRideId,
   getTicketById,
-  deleteTicket
+  deleteTicket,
 }
