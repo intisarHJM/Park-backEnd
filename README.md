@@ -26,7 +26,7 @@ The client-side application for this project can be found here:
 
 ---
 
-## 📂 Project Structure
+## 📂 Back-end Structure
 The backend is organized using a modular architecture to separate concerns:
 
 ```text
