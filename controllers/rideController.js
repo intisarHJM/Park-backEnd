@@ -19,7 +19,7 @@ const createRide = async (req, res) => {
 const getAllRides = async (req, res) => {
   try {
     const rides = await Ride.find({})
-    res.send(`rides: ${rides}`)
+    res.status(200).json({ data: rides })
   } catch (error) {
     console.error("⚠️ Error showing all rides:", error.message)
     return res.status(400).json({

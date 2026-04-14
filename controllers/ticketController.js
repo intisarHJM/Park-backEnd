@@ -1,6 +1,5 @@
 const Ticket = require("../models/Ticket")
 const Ride = require("../models/Ride")
-
 const createTicket = async (req, res) => {
   try {
     const { rideId } = req.params
@@ -11,9 +10,18 @@ const createTicket = async (req, res) => {
     }
 
     const ticket = await Ticket.create(ticketData)
+
+    return res.status(201).json({
+      success: true,
+      message: "Ticket created successfully!",
+      data: ticket,
+    })
+
   } catch (error) {
+    
     res.status(400).json({
-      success: "An error occurred creating the new tickets.",
+      success: false,
+      message: "An error occurred creating the new ticket.",
       error: error.message,
     })
   }
