@@ -29,11 +29,54 @@ const getAllRides = async (req, res) => {
   }
 }
 
+
+
 //get single ride by id(Rehab)
 
+
+const getRideById = async (req, res) => {
+  try {
+    const ride = await Ride.findById(req.params.id).populate("tickets")
+    if (!ride) {
+      return res.status(404).json({ success: false, message: "Ride not found" })
+    }
+    res.status(200).json({ success: true, data: ride })
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "An error occurred getting ride by id.",
+      error: error.message,
+    })
+  }
+}
+
+
 //delete single ride by id(Rehab)
+
+
+
+
+const deleteRideById = async (req, res) => {
+  try {
+    const ride = await Ride.findByIdAndDelete(req.params.id)
+
+    if (!ride) {
+      return res.status(404).json({ success: false, message: "Ride not found" })
+    }
+
+    res.status(200).json({ success: true, message: `${ride.name} deleted successfully` })
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "An error occurred deleting the ride",
+      error: error.message,
+    })
+  }
+}
 
 module.exports = {
   getAllRides,
   createRide,
+  getRideById,
+  deleteRideById
 }
